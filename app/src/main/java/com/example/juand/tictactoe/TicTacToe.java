@@ -38,8 +38,10 @@ public class TicTacToe {
     private void checkBoardState(){
         if (checkBoardDirections(board)){
             showMessage("Player " + playerTurn + " has won!");
+            controller.diableButtons(false);
         } else if (checkFullBoard()){
             showMessage("Tie Game");
+            controller.diableButtons(false);
         }
     }
 

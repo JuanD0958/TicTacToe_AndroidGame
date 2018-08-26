@@ -45,6 +45,18 @@ public class GameActivity extends AppCompatActivity {
         restartGameButton.setOnClickListener(event -> game.resetBoard());
     }
 
+    public void diableButtons(boolean enabled){
+        btnTL.setEnabled(enabled);
+        btnTM.setEnabled(enabled);
+        btnTR.setEnabled(enabled);
+        btnML.setEnabled(enabled);
+        btnMM.setEnabled(enabled);
+        btnMR.setEnabled(enabled);
+        btnBL.setEnabled(enabled);
+        btnBM.setEnabled(enabled);
+        btnBR.setEnabled(enabled);
+    }
+
     private void setBindingWithButtons(ActivityGameBinding activityGameBinding) {
         btnTL = activityGameBinding.btnTL;
         btnTM = activityGameBinding.btnTM;
@@ -69,6 +81,7 @@ public class GameActivity extends AppCompatActivity {
         btnBL.setText(blank);
         btnBM.setText(blank);
         btnBR.setText(blank);
+        diableButtons(true);
     }
 
     public void drawPlayerOnBoard(int i, int j,String text){
