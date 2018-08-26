@@ -104,6 +104,24 @@
             android:layout_marginBottom="46dp"
             android:text="New Game" />
 
+        <TextView
+            android:id="@+id/player1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="124dp"
+            android:text="Player 1 : O" />
+
+        <TextView
+            android:id="@+id/player2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_below="@+id/player1"
+            android:layout_marginTop="-124dp"
+            android:text="Player 2 : X" />
+
 
     </RelativeLayout>
 </layout>
