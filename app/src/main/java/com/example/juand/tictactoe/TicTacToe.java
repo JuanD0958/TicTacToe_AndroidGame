@@ -85,15 +85,18 @@ public class TicTacToe {
 
     private boolean checkRows(int[][] testBoard) {
         for (int y=0;y<3;y++) {
-            return testBoard[0][y]!=0 && testBoard[0][y] == testBoard[1][y] && testBoard[1][y] == testBoard[2][y];
+            if(testBoard[0][y]!=0 && testBoard[0][y] == testBoard[1][y] && testBoard[1][y] == testBoard[2][y]){
+                return true;
+            }
         }
         return false;
     }
 
     private boolean checkColumns(int[][] testBoard) {
         for (int x=0;x<3;x++) {
-            if (testBoard[x][0]!=0 && testBoard[x][0] == testBoard[x][1] && testBoard[x][1] == testBoard[x][2])
+            if (testBoard[x][0]!=0 && testBoard[x][0] == testBoard[x][1] && testBoard[x][1] == testBoard[x][2]) {
                 return true;
+            }
         }
         return false;
     }
