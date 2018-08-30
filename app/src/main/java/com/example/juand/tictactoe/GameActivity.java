@@ -27,9 +27,9 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void configureGameBoard() {
-        game = new TicTacToe();
+        game = new TicTacToe(new GameBoard());
         game.setController(this);
-        game.resetBoard();
+        game.resetGame();
     }
 
     private void setListenersToButtons() {
@@ -42,7 +42,7 @@ public class GameActivity extends AppCompatActivity {
         btnBL.setOnClickListener(event -> game.onClickButton(0, 2));
         btnBM.setOnClickListener(event -> game.onClickButton(1, 2));
         btnBR.setOnClickListener(event -> game.onClickButton(2, 2));
-        restartGameButton.setOnClickListener(event -> game.resetBoard());
+        restartGameButton.setOnClickListener(event -> game.resetGame());
     }
 
     public void diableButtons(boolean enabled){
