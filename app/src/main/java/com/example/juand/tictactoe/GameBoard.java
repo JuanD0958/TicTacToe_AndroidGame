@@ -3,6 +3,10 @@ package com.example.juand.tictactoe;
 public class GameBoard {
     private int [][] board = {{0,0,0},{0,0,0},{0,0,0}};
 
+    public int cellUsedByPlayer(int posX, int posY){
+        return board[posX][posY];
+    }
+
     public boolean isBoardCellUsed(int posX, int posY) {
         return board[posX][posY]!=0;
     }
@@ -22,7 +26,6 @@ public class GameBoard {
         }
         return true;
     }
-
 
     public void resetBoard() {
         for (int x=0;x<3;x++){
@@ -54,6 +57,7 @@ public class GameBoard {
         }
         return false;
     }
+
 
     public boolean checkColumns(int[][] testBoard) {
         for (int x=0;x<3;x++) {

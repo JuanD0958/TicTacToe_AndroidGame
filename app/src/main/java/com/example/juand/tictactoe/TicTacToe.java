@@ -34,6 +34,21 @@ public class TicTacToe {
     }
 
 
+    public void restoreStastusBoard() {
+        for (int x=0;x<3;x++){
+            for(int y=0;y<3;y++){
+               if(board.cellUsedByPlayer(x,y)==1){
+                   controller.drawPlayerOnBoard(x,y,"O");
+               }
+               if(board.cellUsedByPlayer(x,y)==2){
+                   controller.drawPlayerOnBoard(x,y,"X");
+               }
+                checkBoardState();
+            }
+        }
+    }
+
+
     private void switchPlayer(){
         playerTurn = playerTurn^3;
     }

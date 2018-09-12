@@ -1,5 +1,6 @@
 package com.example.juand.tictactoe;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -27,9 +28,10 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void configureGameBoard() {
-        game = new TicTacToe(new GameBoard());
+        GameViewModel model = ViewModelProviders.of(this).get(GameViewModel.class);
+        game = model.getTicTacToe();
         game.setController(this);
-        game.resetGame();
+        game.restoreStastusBoard();
     }
 
     private void setListenersToButtons() {
