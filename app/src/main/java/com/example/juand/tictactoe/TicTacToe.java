@@ -6,12 +6,10 @@ public class TicTacToe {
     private GameActivity controller;
 
     public TicTacToe(GameBoard board){
-
         this.board = board;
     }
 
     public void setController(GameActivity controller){
-
         this.controller = controller;
     }
 
@@ -25,9 +23,7 @@ public class TicTacToe {
     }
 
     private void checkAndDrawPlayer(int i, int j, int playerOnTurn, String playerSymbol) {
-
         if(!board.isBoardCellUsed(i,j) && playerTurn==playerOnTurn){
-
             board.setDataBoardPosition(i,j,playerTurn);
             controller.drawPlayerOnBoard(i,j,playerSymbol);
         }
@@ -37,14 +33,16 @@ public class TicTacToe {
     public void restoreStastusBoard() {
         for (int x=0;x<3;x++){
             for(int y=0;y<3;y++){
-               if(board.cellUsedByPlayer(x,y)==1){
-                   controller.drawPlayerOnBoard(x,y,"O");
-               }
-               if(board.cellUsedByPlayer(x,y)==2){
-                   controller.drawPlayerOnBoard(x,y,"X");
-               }
+                restorePlayerDraw(x, y, 1, "O");
+                restorePlayerDraw(x, y, 2, "X");
                 checkBoardState();
             }
+        }
+    }
+
+    private void restorePlayerDraw(int x, int y, int i, String o) {
+        if (board.cellUsedByPlayer(x, y) == i) {
+            controller.drawPlayerOnBoard(x, y, o);
         }
     }
 
